@@ -119,11 +119,9 @@ My128BitSignedInt My128BitSummer(My128BitSignedInt a, My128BitSignedInt b)
 	{
 		// This is the case of both positive numbers
 		Result.AfterDecimal = a.AfterDecimal + b.AfterDecimal;
+		Result.BeforeDecimal = a.BeforeDecimal + b.BeforeDecimal;
 		if (Result.AfterDecimal < a.AfterDecimal || Result.AfterDecimal < b.AfterDecimal) {
-			Result.BeforeDecimal = 1 + a.BeforeDecimal + b.BeforeDecimal;
-		}
-		else {
-			Result.BeforeDecimal = a.BeforeDecimal + b.BeforeDecimal;
+			Result.BeforeDecimal = 1 +Result.BeforeDecimal;
 		}
 	}
 
